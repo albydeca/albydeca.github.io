@@ -28,6 +28,48 @@ a {
 Main Components 
 
 -------------------------------- */
+.scroll {
+    padding: 30px 30px 30px 30px;
+    background-color: #fff;
+}
+
+.arrow-wrap {
+  position:absolute;
+  left:50%;
+  margin-left:-5em;
+  background:white;
+  height:10em;
+  padding:4em 2em;
+  border-radius:50%;
+  font-size:0.5em;
+  display:block;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #222222;
+}
+
+.arrow {
+  float:left;
+  position:relative;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3em 3em 0em 3em;
+  border-color: #222222 transparent transparent transparent;
+}
+
+.arrow:after {
+  content:'';
+  position:absolute;
+  top:-3.2em;
+  left:-3em;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 3em 3em 0em 3em;
+  border-color: white transparent transparent transparent;
+}
+
 .cd-horizontal-timeline {
   opacity: 0;
   margin: 2em auto;
@@ -406,4 +448,23 @@ Main Components
     -o-transform: translateX(0%);
     transform: translateX(0%);
   }
+}
+
+@-webkit-keyframes arrows {
+0% { top:0; }
+10% { top:12%; }
+20% { top:0; }
+30% { top:12%; }
+40% { top:-12%; }
+50% { top:12%; }
+60% { top:0; }
+70% { top:12%; }
+80% { top:-12%; }
+90% { top:12%; }
+100% { top:0; }
+}
+
+.arrow-wrap .arrow {
+-webkit-animation: arrows 2.8s 0.4s;
+-webkit-animation-delay: 3s;
 }
