@@ -154,7 +154,7 @@ header {
   min-height: 550px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-repeat:repeat-x;
+  background-repeat:no-repeat;
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
@@ -189,7 +189,7 @@ header .header-content .header-content-inner p {
   header {
     height: 550px;
     background-size: contain;
-    background-repeat:repeat-x;
+    background-repeat:no-repeat;
   }
   header .header-content {
     position: absolute;
