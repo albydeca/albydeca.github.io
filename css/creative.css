@@ -83,6 +83,7 @@ aside {
 .navbar-default .navbar-header .navbar-toggle {
   font-weight: 700;
   font-size: 12px;
+  background-color: #d30404;
   color: #222222;
   text-transform: uppercase;
 }
