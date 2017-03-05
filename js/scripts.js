@@ -8,6 +8,24 @@ $(window).scroll( function(){
 
 });
 
+$(allInView);
+$(window).scroll(allInView);
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+function allInView() {
+  if (isScrolledIntoView($(".animation-container"))) init();
+}
+
+
 $(function() {
   $('a[href=#content]').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
