@@ -31,11 +31,13 @@ Utils.prototype = {
 };
 
 var Utils = new Utils();
+var started = false;
 var anim = $(window).scroll(function() {
   var isElementInView = Utils.isElementInView($('#canvas'), false);
 
-if (isElementInView) {
+if (isElementInView && !started) {
     init();
+    started = true
     $(window).off("scroll", anim);
 } else {
     console.log('out of view');
