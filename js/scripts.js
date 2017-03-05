@@ -8,26 +8,38 @@ $(window).scroll( function(){
 
 });
 
-$(allInView);
-$(window).scroll(allInView);
 
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
 
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
+function Utils() {
 
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
 }
 
-function allInView() {
-  if (isScrolledIntoView($("#animation-container"))) 
+Utils.prototype = {
+    constructor: Utils,
+    isElementInView: function (element, fullyInView) {
+        var pageTop = $(window).scrollTop();
+        var pageBottom = pageTop + $(window).height();
+        var elementTop = $(element).offset().top;
+        var elementBottom = elementTop + $(element).height();
+
+        if (fullyInView === true) {
+            return ((pageTop < elementTop) && (pageBottom > elementBottom));
+        } else {
+            return ((elementTop <= pageBottom) && (elementBottom >= pageTop));
+        }
+    }
+};
+
+var Utils = new Utils();
+$(window).scroll(function() {
+  var isElementInView = Utils.isElementInView($('#canvas'), false);
+
+if (isElementInView) {
     init();
-  else 
-    return
+} else {
+    console.log('out of view');
 }
-
+});
 
 $(function() {
   $('a[href=#content]').click(function() {
