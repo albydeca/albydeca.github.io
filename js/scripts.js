@@ -22,7 +22,10 @@ function isScrolledIntoView(elem) {
 }
 
 function allInView() {
-  if (isScrolledIntoView($(".animation-container"))) init();
+  if (isScrolledIntoView($(".animation-container"))) 
+    init();
+  else 
+    return
 }
 
 
