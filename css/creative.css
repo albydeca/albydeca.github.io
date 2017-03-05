@@ -49,6 +49,20 @@ p {
   background-color: #222222;
   color: white;
 }
+.bg-red {
+  background-color: yellow;
+  color: white;
+}
+@media screen and (max-width: 600px) {
+  .bg-red {
+    visibility: hidden;
+    clear: both;
+    float: left;
+    margin: 10px auto 5px 20px;
+    width: 28%;
+    display: none;
+  }
+}
 .text-faded {
   color: rgba(255, 255, 255, 0.7);
 }
