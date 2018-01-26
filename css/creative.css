@@ -169,7 +169,7 @@ header {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-repeat:no-repeat;
-  background-size: cover;
+  background-size: cover !important;
   -o-background-size: cover;
   background-position: center;
   background-image: url('../img/header5.JPG');
