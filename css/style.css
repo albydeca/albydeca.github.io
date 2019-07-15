@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+#myFileInput {
+  object-fit: cover;
+}
+
 /* -------------------------------- 
 
 Main Components 
